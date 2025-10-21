@@ -7,7 +7,7 @@ import (
 	"github.com/go-chi/cors"
 )
 
-func (app *Application) routes() http.Handler {
+func (app *App) routes() http.Handler {
 	//mux := http.NewServeMux()
 	mux := chi.NewRouter()
 
@@ -20,50 +20,11 @@ func (app *Application) routes() http.Handler {
 		MaxAge:           300,
 	}))
 
-	mux.Post("/projects", app.projects)
+	mux.Get("/codingSkills", app.codingSkills)
 
 	mux.Get("/achievements", app.achievements)
 
+	mux.Get("/projects", app.projects)
+
 	return mux
-}
-
-func (app *Application) projects(w http.ResponseWriter, r *http.Request) {
-
-}
-
-func (app *Application) achievements(w http.ResponseWriter, r *http.Request) {
-
-	var payload jsonResponse
-	payload.Error = false
-	payload.Message = ""
-	payload.Data = achievements
-
-	app.writeJSON(w, http.StatusOK, payload)
-}
-
-var achievements = []struct {
-	Title       string `json:"title"`
-	Institution string `json:"institution"`
-	Year        string `json:"year,omitempty"`
-	Content     string `json:"content,omitempty"`
-}{
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes.Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Thesis on Thermodynamic of Black Holes."},
-	{"Physics Undergraduate Degree", "University of Cyprus", "2013", "Something silly for last."},
 }

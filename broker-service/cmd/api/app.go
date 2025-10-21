@@ -4,10 +4,10 @@ type config struct {
 	port int
 }
 
-type Application struct {
+type App struct {
 	config config
 }
 
-func (app *Application) serve() {
+func (app *App) serve() {
 
 }

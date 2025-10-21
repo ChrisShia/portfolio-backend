@@ -11,7 +11,7 @@ type jsonResponse struct {
 	Data    any    `json:"data"`
 }
 
-func (app *Application) writeJSON(w http.ResponseWriter, status int, data any) error {
+func (app *App) writeJSON(w http.ResponseWriter, status int, data any) error {
 	out, err := json.Marshal(data)
 	if err != nil {
 		return err

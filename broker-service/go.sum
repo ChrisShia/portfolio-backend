@@ -9,4 +9,10 @@ github.com/google/go-github/v74 v74.0.0 h1:yZcddTUn8DPbj11GxnMrNiAnXH14gNs559AsU
 github.com/google/go-github/v74 v74.0.0/go.mod h1:ubn/YdyftV80VPSI26nSJvaEsTOnsjrxG3o9kJhcyak=
 github.com/google/go-querystring v1.1.0 h1:AnCroh3fv4ZBgVIf1Iwtovgjaw/GiKJo8M8yD/fhyJ8=
 github.com/google/go-querystring v1.1.0/go.mod h1:Kcdr2DB4koayq7X8pmAG4sNG59So17icRSOU623lUBU=
+github.com/rustyoz/Mtransform v0.0.0-20250628105438-00796a985d0a h1:iqc6IJquka4XBgVSqP+KaNe4nPk7n+pfTbpTx51IgJo=
+github.com/rustyoz/Mtransform v0.0.0-20250628105438-00796a985d0a/go.mod h1:/OCzi5mN2hO/GaVureeTqn0EJbOnZUdBF8zHxWvFlt8=
+github.com/rustyoz/genericlexer v0.0.0-20250522144106-d3cfee480384 h1:jrCaAewj72Bp+RHPzRB+CFOLRwCiluzaiwY0R1h0SNw=
+github.com/rustyoz/genericlexer v0.0.0-20250522144106-d3cfee480384/go.mod h1:m65JtsVg785EjQvQylesseVucezoQZqJozlPAfjXmbE=
+github.com/rustyoz/svg v0.0.0-20250705135709-8b1786137cb3 h1:dFappt+gj/o9cCFfMmXV8Jq+hShQmFlM6Uh2Vd0YlzE=
+github.com/rustyoz/svg v0.0.0-20250705135709-8b1786137cb3/go.mod h1:33v4CGNONT4+QIwIt3o1GVdBqTfLCeptHNc0HpZ1N14=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
