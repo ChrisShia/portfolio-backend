@@ -1,1 +1,5 @@
 broker-service/project/
+
+build/
+
+data/

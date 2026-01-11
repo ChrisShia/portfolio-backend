@@ -1,0 +1,22 @@
+ services:
+
+   broker-service:
+     build:
+       context: ./portfolio-backend
+       dockerfile: ./broker-service/broker-service.dockerfile
+     ports:
+        - "80:80"
+     restart: always
+     deploy:
+       mode: replicated
+       replicas: 1
+
+   mongo:
+     image: ${MONGO_IMAGE}
+     ports:
+       - "${MONGO_PUBLISHED}:${MONGO_TARGET}"
+     environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+     volumes:
+       - ${MONGO_DB_SRC}:/data/db

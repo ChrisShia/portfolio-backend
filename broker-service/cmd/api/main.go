@@ -1,16 +1,35 @@
 package main
 
 import (
+	"errors"
+	"fmt"
 	"net/http"
+	"os"
+	"portfolio/internal/data"
+
+	"github.com/ChrisShia/jsonlog"
 )
 
 func main() {
+	cfg := config{}
+	cfg.flags()
 
-	app := App{}
+	logger := jsonlog.New(os.Stdout, jsonlog.LevelInfo)
 
-	//client := github.NewClient(nil)
+	app := App{config: cfg, log: logger}
 
-	//go updateRepos(client)
+	app.connectMongoDB()
+	defer app.disconnectMongoDB()
 
-	http.ListenAndServe(":8080", app.routes())
+	app.models = data.New(app.mongo.client)
+
+	err := http.ListenAndServe(fmt.Sprintf(":%d", app.config.port), app.Routes())
+	if err != nil {
+		switch {
+		case errors.Is(err, http.ErrServerClosed):
+			return
+		default:
+			app.log.PrintFatal(err, nil)
+		}
+	}
 }

@@ -3,11 +3,23 @@ module portfolio
 go 1.24.1
 
 require (
-	github.com/go-chi/chi/v5 v5.2.3 // indirect
-	github.com/go-chi/cors v1.2.2 // indirect
-	github.com/google/go-github/v74 v74.0.0 // indirect
+	github.com/ChrisShia/jsonlog v0.0.0-20251003103116-b71c25828da7
+	github.com/go-chi/chi/v5 v5.2.3
+	github.com/go-chi/cors v1.2.2
+	github.com/google/go-github/v74 v74.0.0
+	go.mongodb.org/mongo-driver v1.17.6
+	go.mongodb.org/mongo-driver/v2 v2.4.0
+)
+
+require (
+	github.com/golang/snappy v1.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/rustyoz/Mtransform v0.0.0-20250628105438-00796a985d0a // indirect
-	github.com/rustyoz/genericlexer v0.0.0-20250522144106-d3cfee480384 // indirect
-	github.com/rustyoz/svg v0.0.0-20250705135709-8b1786137cb3 // indirect
+	github.com/klauspost/compress v1.18.1 // indirect
+	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
+	github.com/xdg-go/scram v1.1.2 // indirect
+	github.com/xdg-go/stringprep v1.0.4 // indirect
+	github.com/youmark/pkcs8 v0.0.0-20240726163527-a2c0da244d78 // indirect
+	golang.org/x/crypto v0.43.0 // indirect
+	golang.org/x/sync v0.18.0 // indirect
+	golang.org/x/text v0.30.0 // indirect
 )
